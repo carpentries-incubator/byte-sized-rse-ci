@@ -2,8 +2,9 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a new lesson built with [The Carpentries Workbench][workbench]. 
+This is a Byte-Sized RSE lesson on Continuous Integration, part of the [Byte-Sized RSE Series](https://carpentries-incubator.github.io/byte-sized-rse-overview/).
 
+## Learning Objectives
 
-[workbench]: https://carpentries.github.io/sandpaper-docs
+At the end of this lesson, learners should be able to:
 
