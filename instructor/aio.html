@@ -567,7 +567,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-example-code"><p>Content from <a href="example-code.html">Example Code</a></p>
 <hr>
-<p>Last updated on 2025-10-27 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -602,7 +602,6 @@ any links that you are not going to use.
 <section><h2 class="section-heading" id="creating-a-copy-of-the-example-code-repository">Creating a Copy of the Example Code Repository<a class="anchor" aria-label="anchor" href="#creating-a-copy-of-the-example-code-repository"></a>
 </h2>
 <hr class="half-width">
-<p>FIXME: copy factorial-example repo into softwaresaved</p>
 <p>For this lesson we’ll need to create a new GitHub repository based on
 the contents of another repository.</p>
 <ol style="list-style-type: decimal">
@@ -1103,7 +1102,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-tracking-running-workflows"><p>Content from <a href="tracking-running-workflows.html">Tracking a Running Workflow</a></p>
 <hr>
-<p>Last updated on 2025-10-27 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/tracking-running-workflows.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1142,15 +1141,12 @@ any links that you are not going to use.
 Since the workflow is triggered on each <code>git push</code>, if we go
 back to our main repository page, we should see an orange circle next to
 the most recent commit displayed just above the directory contents.</p>
-<p>FIXME: add screenshot of main page with orange CI running marker</p>
 <p>When this workflow is complete, it will display either a green tick
 for success, or a red cross if the workflow encountered an error. You
 can also see a history of the past workflow runs’ failures or successes
 for each workflow run triggered on the commits page, by selecting
 <code>Commits</code> on the right of this most recent commit
 display.</p>
-<p>FIXME: add screenshot of commits page with a single workflow result
-entry</p>
 <p>For more detail we can check the progress of a running workflow by
 selecting <code>Actions</code> in the top navigation bar (e.g. <a href="https://github.com/steve-crouch/ci-example/actions" class="external-link uri">https://github.com/steve-crouch/ci-example/actions</a>). We
 can see here that a new run has started, titled with our commit message.
@@ -1165,7 +1161,6 @@ separate collapsed steps that we may expand to view further detail. Each
 of the steps is named from the <code>name</code> labels we gave each
 step. Note that the workflow may still be running at this point, so not
 all steps may be complete yet.</p>
-<p>FIXME: show workflow log of completed run</p>
 <p>If we drill down by selecting the <code>Test with pytest</code>
 entry, we’ll get a breakdown of the thing we’re really interested
 in:</p>
@@ -1227,7 +1222,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-build-matrices"><p>Content from <a href="build-matrices.html">Build Matrices</a></p>
 <hr>
-<p>Last updated on 2025-10-27 |
+<p>Last updated on 2025-10-28 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/build-matrices.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
@@ -1311,7 +1306,6 @@ the <code>python-version</code> component of our build matrix:</p>
 as before.</p>
 <p>If we view the most recent GitHub Actions workflow run, we should see
 that a new job has been created for each of the 9 permutations.</p>
-<p>FIXME: add GA screenshot showing all 9 permutations running</p>
 <p>Note all jobs are running in parallel (up to the limit allowed by our
 account) which potentially saves us a lot of time waiting for testing
 results. Therefore overall, this approach allows us to massively scale
