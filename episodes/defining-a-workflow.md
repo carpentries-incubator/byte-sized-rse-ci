@@ -117,7 +117,7 @@ In filename text box, add `.github` then add `/`.
 This will allow us to continue adding directories or a filename as needed.
 1. Add `workflows`, and `/` again.
 1. Add `main.yml`.
-1. Should end up with `ci-example / .github / workflow / main.yml in main` in the file field.
+1. Should end up with `ci-example / .github / workflows / main.yml in main` in the file field.
 1. Select anywhere in the `Edit new file` window to start creating the file.
 
 Note that GitHub Actions expects workflows to be contained within the `.github/workflows` directory.
