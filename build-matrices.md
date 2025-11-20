@@ -4,15 +4,19 @@ teaching: 10
 exercises: 0
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
-- FIXME
+- What is a build matrix in GitHub Actions?
+- How can I test my code across multiple versions of Python and multiple operating systems?
+- How does GitHub Actions run matrix jobs and report their results?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Understand how to define and use a build matrix in GitHub Actions
+- Configure workflows to run tests across multiple operating systems and Python versions
+- Explain how GitHub Actions handles failures in matrix builds and how to change that behaviour
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -97,8 +101,11 @@ This would ensure that all matrix jobs will be run to completion regardless of a
 which is useful so that we are able to identify and fix all failures at once,
 as opposed to having to fix each in turn.
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+::::::::::::::::::::::::::::::::::::: keypoints
 
-- FIXME
+- A build matrix allows a workflow to run across many OS and Python version combinations automatically
+- GitHub Actions creates a separate job for every combination in the matrix
+- Matrix jobs run in parallel, reducing the time needed to test multiple configurations
+- Using matrix builds helps ensure code works reliably on all relevant platforms
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
