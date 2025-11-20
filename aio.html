@@ -567,7 +567,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-example-code"><p>Content from <a href="example-code.html">Example Code</a></p>
 <hr>
-<p>Last updated on 2025-10-28 |
+<p>Last updated on 2025-11-20 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -581,7 +581,10 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>How do I setup a virtual environment and run tests using
+<code>pytest</code>?</li>
+<li>How do I verify code correctness before setting up automatic
+CI?</li>
 </ul>
 </div>
 </div>
@@ -591,7 +594,12 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Obtain and run example code used for this lesson</li>
+<li>Setup a virtual environment to run unit tests using
+<code>pytest</code>
+</li>
+<li>Run a repository’s existing unit tests using a unit testing
+framework</li>
 </ul>
 </div>
 </div>
@@ -729,26 +737,49 @@ summary, we need to:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv venv</span></code></pre>
 </div>
 <p>Then to activate it:</p>
+<div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  Linux and Mac
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  Windows
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">[Linux]</span> source venv/bin/activate</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">[Mac]</span> source venv/bin/activate</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="ex">[Windows]</span> source venv/Scripts/activate</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">source</span> venv/bin/activate</span></code></pre>
 </div>
-<p>To install <code>pytest</code>:</p>
+</div>
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">pip</span> install pytest</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">source</span> venv/Scripts/activate</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>To install <code>pytest</code>:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pip</span> install pytest</span></code></pre>
 </div>
 <p>Then, in the shell, we can run these tests by ensuring we’re in the
 repository’s root directory, and running the following (very similar to
 how we ran our previous <code>unittest</code> tests):</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pytest tests/test_factorial.py </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pytest tests/test_factorial.py </span></code></pre>
 </div>
 <p>You’ll note the output is slightly different:</p>
 <div class="codewrapper">
@@ -768,10 +799,10 @@ the test is successful, and a <code>F</code> if there is a failure.</p>
 <p>We can also ask for verbose output, which shows us the results for
 each test separately, in the same way as we did with
 <code>unittest</code>, using the <code>-v</code> flag:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pytest <span class="at">-v</span> tests/test_factorial.py </span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pytest <span class="at">-v</span> tests/test_factorial.py </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -788,7 +819,7 @@ tests/test_factorial.py::test_negative PASSED                            [100%]
 
 ============================== 3 passed in 0.00s ===============================</code></pre>
 </div>
-<p>[CHECKPOINT - who’s run the tests and got this output? Yes/No]</p>
+
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -797,7 +828,9 @@ tests/test_factorial.py::test_negative PASSED                            [100%]
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>Pytest uses simple functions rather than test classes</li>
+<li>A virtual environment keeps test dependencies isolated and
+reproducible</li>
 </ul>
 </div>
 </div>
@@ -808,7 +841,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-defining-a-workflow"><p>Content from <a href="defining-a-workflow.html">Defining a Workflow</a></p>
 <hr>
-<p>Last updated on 2025-10-27 |
+<p>Last updated on 2025-11-20 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/defining-a-workflow.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -822,7 +855,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>What does a GitHub Actions workflow look like?</li>
+<li>How do I describe a workflow using YAML?</li>
+<li>How can I create a workflow that runs tests automatically?</li>
 </ul>
 </div>
 </div>
@@ -832,7 +867,10 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Understand the structure and syntax of YAML for workflow files</li>
+<li>Create a GitHub Actions workflow that runs on each push</li>
+<li>Define jobs and steps to install dependencies and run tests in
+CI</li>
 </ul>
 </div>
 </div>
@@ -938,7 +976,7 @@ continue adding directories or a filename as needed.</li>
 <li>Add <code>workflows</code>, and <code>/</code> again.</li>
 <li>Add <code>main.yml</code>.</li>
 <li>Should end up with
-<code>ci-example / .github / workflow / main.yml in main</code> in the
+<code>ci-example / .github / workflows / main.yml in main</code> in the
 file field.</li>
 <li>Select anywhere in the <code>Edit new file</code> window to start
 creating the file.</li>
@@ -1089,7 +1127,14 @@ since that’s what the workflow is designed to do.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>YAML uses indentation and key–value pairs to define workflow
+structure</li>
+<li>GitHub looks for workflow files inside the
+<code>.github/workflows/</code> directory</li>
+<li>CI lets your tests run automatically on a clean environment every
+time you update your code</li>
+<li>We can trigger workflows manually or automatically using different
+GitHub events</li>
 </ul>
 </div>
 </div>
@@ -1100,7 +1145,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-tracking-running-workflows"><p>Content from <a href="tracking-running-workflows.html">Tracking a Running Workflow</a></p>
 <hr>
-<p>Last updated on 2025-10-28 |
+<p>Last updated on 2025-11-20 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/tracking-running-workflows.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1114,7 +1159,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>How can I see whether my GitHub Actions workflow is running?</li>
+<li>Where can I find the logs for each workflow step?</li>
+<li>How do I know which commit triggered a workflow run?</li>
 </ul>
 </div>
 </div>
@@ -1124,7 +1171,9 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Track the status of a running GitHub Actions workflow</li>
+<li>View workflow logs and step-by-step output</li>
+<li>Identify which commits triggered workflow runs</li>
 </ul>
 </div>
 </div>
@@ -1208,7 +1257,13 @@ required to verify new functionality.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>You can view all workflow runs under the <code>Actions</code>
+tab</li>
+<li>Each workflow run includes detailed logs for every job and step</li>
+<li>A workflow re-runs automatically whenever a matching event (like
+<code>push</code>) occurs</li>
+<li>Workflow logs help diagnose failing tests or configuration
+issues</li>
 </ul>
 </div>
 </div>
@@ -1219,7 +1274,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-build-matrices"><p>Content from <a href="build-matrices.html">Build Matrices</a></p>
 <hr>
-<p>Last updated on 2025-10-28 |
+<p>Last updated on 2025-11-20 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/build-matrices.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1233,7 +1288,11 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>FIXME</li>
+<li>What is a build matrix in GitHub Actions?</li>
+<li>How can I test my code across multiple versions of Python and
+multiple operating systems?</li>
+<li>How does GitHub Actions run matrix jobs and report their
+results?</li>
 </ul>
 </div>
 </div>
@@ -1243,7 +1302,12 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>FIXME</li>
+<li>Understand how to define and use a build matrix in GitHub
+Actions</li>
+<li>Configure workflows to run tests across multiple operating systems
+and Python versions</li>
+<li>Explain how GitHub Actions handles failures in matrix builds and how
+to change that behaviour</li>
 </ul>
 </div>
 </div>
@@ -1344,7 +1408,14 @@ in turn.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>A build matrix allows a workflow to run across many OS and Python
+version combinations automatically</li>
+<li>GitHub Actions creates a separate job for every combination in the
+matrix</li>
+<li>Matrix jobs run in parallel, reducing the time needed to test
+multiple configurations</li>
+<li>Using matrix builds helps ensure code works reliably on all relevant
+platforms</li>
 </ul>
 </div>
 </div>
@@ -1401,8 +1472,8 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-ci/aio.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-ci/aio.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-11-19",
-  "datePublished": "2025-11-19"
+  "dateModified": "2025-11-20",
+  "datePublished": "2025-11-20"
 }
 
   </script><script>

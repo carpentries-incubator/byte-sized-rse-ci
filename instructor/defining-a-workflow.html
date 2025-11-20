@@ -321,7 +321,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Defining a Workflow</h1>
-        <p>Last updated on 2025-10-27 |
+        <p>Last updated on 2025-11-20 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-ci/edit/main/episodes/defining-a-workflow.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -342,7 +342,9 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>FIXME</li>
+<ul><li>What does a GitHub Actions workflow look like?</li>
+<li>How do I describe a workflow using YAML?</li>
+<li>How can I create a workflow that runs tests automatically?</li>
 </ul></div>
 </div>
 </div>
@@ -350,7 +352,10 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>FIXME</li>
+<ul><li>Understand the structure and syntax of YAML for workflow files</li>
+<li>Create a GitHub Actions workflow that runs on each push</li>
+<li>Define jobs and steps to install dependencies and run tests in
+CI</li>
 </ul></div>
 </div>
 </div>
@@ -447,7 +452,7 @@ continue adding directories or a filename as needed.</li>
 <li>Add <code>workflows</code>, and <code>/</code> again.</li>
 <li>Add <code>main.yml</code>.</li>
 <li>Should end up with
-<code>ci-example / .github / workflow / main.yml in main</code> in the
+<code>ci-example / .github / workflows / main.yml in main</code> in the
 file field.</li>
 <li>Select anywhere in the <code>Edit new file</code> window to start
 creating the file.</li>
@@ -584,7 +589,14 @@ since that’s what the workflow is designed to do.</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>FIXME</li>
+<ul><li>YAML uses indentation and key–value pairs to define workflow
+structure</li>
+<li>GitHub looks for workflow files inside the
+<code>.github/workflows/</code> directory</li>
+<li>CI lets your tests run automatically on a clean environment every
+time you update your code</li>
+<li>We can trigger workflows manually or automatically using different
+GitHub events</li>
 </ul></div>
 </div>
 </div>
@@ -650,8 +662,8 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-ci/instructor/defining-a-workflow.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-ci/instructor/defining-a-workflow.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-10-27",
-  "datePublished": "2025-11-19"
+  "dateModified": "2025-11-20",
+  "datePublished": "2025-11-20"
 }
 
   </script><script>
