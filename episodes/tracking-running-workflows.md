@@ -4,15 +4,19 @@ teaching: 10
 exercises: 0
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
-- FIXME
+- How can I see whether my GitHub Actions workflow is running?
+- Where can I find the logs for each workflow step?
+- How do I know which commit triggered a workflow run?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Track the status of a running GitHub Actions workflow
+- View workflow logs and step-by-step output
+- Identify which commits triggered workflow runs
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -87,6 +91,9 @@ and adding new tests as required to verify new functionality.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- You can view all workflow runs under the `Actions` tab
+- Each workflow run includes detailed logs for every job and step
+- A workflow re-runs automatically whenever a matching event (like `push`) occurs
+- Workflow logs help diagnose failing tests or configuration issues
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

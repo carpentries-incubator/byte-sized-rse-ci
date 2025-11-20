@@ -4,15 +4,19 @@ teaching: 10
 exercises: 0
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
-- FIXME
+- What does a GitHub Actions workflow look like?
+- How do I describe a workflow using YAML?
+- How can I create a workflow that runs tests automatically?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Understand the structure and syntax of YAML for workflow files
+- Create a GitHub Actions workflow that runs on each push
+- Define jobs and steps to install dependencies and run tests in CI
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -113,7 +117,7 @@ In filename text box, add `.github` then add `/`.
 This will allow us to continue adding directories or a filename as needed.
 1. Add `workflows`, and `/` again.
 1. Add `main.yml`.
-1. Should end up with `ci-example / .github / workflow / main.yml in main` in the file field.
+1. Should end up with `ci-example / .github / workflows / main.yml in main` in the file field.
 1. Select anywhere in the `Edit new file` window to start creating the file.
 
 Note that GitHub Actions expects workflows to be contained within the `.github/workflows` directory.
@@ -241,8 +245,11 @@ we commit this into our repository:
 This commit action will now trigger the running of this new workflow,
 since that's what the workflow is designed to do.
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+::::::::::::::::::::::::::::::::::::: keypoints
 
-- FIXME
+- YAML uses indentation and key–value pairs to define workflow structure
+- GitHub looks for workflow files inside the `.github/workflows/` directory
+- CI lets your tests run automatically on a clean environment every time you update your code
+- We can trigger workflows manually or automatically using different GitHub events
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

@@ -4,15 +4,18 @@ teaching: 10
 exercises: 0
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
-- FIXME
+- How do I setup a virtual environment and run tests using `pytest`?
+- How do I verify code correctness before setting up automatic CI?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- FIXME
+- Obtain and run example code used for this lesson
+- Setup a virtual environment to run unit tests using `pytest`
+- Run a repository’s existing unit tests using a unit testing framework
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -137,11 +140,21 @@ python -m venv venv
 
 Then to activate it:
 
+::: tab
+
+### Linux and Mac
+
 ```bash
-[Linux] source venv/bin/activate
-[Mac] source venv/bin/activate
-[Windows] source venv/Scripts/activate
+source venv/bin/activate
 ```
+
+### Windows
+
+```bash
+source venv/Scripts/activate
+```
+
+:::
 
 To install `pytest`:
 
@@ -195,10 +208,17 @@ tests/test_factorial.py::test_negative PASSED                            [100%]
 ============================== 3 passed in 0.00s ===============================
 ```
 
-[CHECKPOINT - who's run the tests and got this output? Yes/No]
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+### Checkpoint: Attendee progress
 
-- FIXME
+Who has run the tests and got this output?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Pytest uses simple functions rather than test classes
+- A virtual environment keeps test dependencies isolated and reproducible
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
