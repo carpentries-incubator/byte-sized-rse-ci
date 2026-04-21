@@ -24,3 +24,7 @@ At the end of this lesson, learners should be able to:
 ### Slides
 
 [Slides](https://docs.google.com/presentation/d/1qNyDV3VDwv6Z3RHwfn5hL0pFxzK_DsWN3bPMjwV7Uoc/edit?usp=sharing) available under CC BY 4.0 licence.
+
+### Recordings
+
+- [Recording of the "Byte-Sized RSE: Continuous Integration" session delivered at SSI's RSC7, 20 November 2025](https://www.youtube.com/watch?v=xZuJ0AOEBbk&t=26s)
