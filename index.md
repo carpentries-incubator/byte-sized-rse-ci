@@ -8,3 +8,8 @@ This is a Byte-Sized RSE lesson on Continuous Integration, part of the [Byte-Siz
 
 At the end of this lesson, learners should be able to:
 
+- Understand the concept of automation and its role in improving efficiency and consistency in software development.
+- Learn the principles and benefits of Continuous Integration.
+- Identify common tasks that can be automated within a CI pipeline, such as code compilation, testing, linting, and documentation generation.
+- Recognise the importance of integrating code changes frequently to minimize conflicts and maintain a stable codebase.
+- Explore how Continuous Integration can be extended to Continuous Delivery to automate the deployment of packages and applications.
