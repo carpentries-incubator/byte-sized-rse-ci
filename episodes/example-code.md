@@ -103,7 +103,7 @@ def test_5():
 
 def test_negative():
     with pytest.raises(ValueError):
-      factorial(-1)
+        factorial(-1)
 ```
 
 The key difference when writing tests for `pytest` as opposed to `unittest`,
